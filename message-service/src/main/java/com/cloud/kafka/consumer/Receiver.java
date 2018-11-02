@@ -1,6 +1,5 @@
 package com.cloud.kafka.consumer;
 
-import com.cloud.kafka.producer.Sender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
