@@ -1,0 +1,28 @@
+spring:
+  kafka:
+    bootstrap-servers: 192.168.11.60:9091,192.168.11.60:9092,192.168.11.60:9093
+    listener.concurrency: 3
+    consumer:
+      group-id: test-consumer-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      batch-size: 16384
+      buffer-memory: 33554432
+
+app:
+  topic:
+    foo: foo.t
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    org.apache: ERROR
+    com.cloud: DEBUG
