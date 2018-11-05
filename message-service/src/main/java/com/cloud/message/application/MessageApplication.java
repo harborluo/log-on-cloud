@@ -1,7 +1,7 @@
-package com.cloud.application;
+package com.cloud.message.application;
 
 
-import com.cloud.kafka.producer.Sender;
+import com.cloud.message.kafka.producer.Sender;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

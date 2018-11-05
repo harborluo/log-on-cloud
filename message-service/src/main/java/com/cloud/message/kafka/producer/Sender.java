@@ -1,4 +1,4 @@
-package com.cloud.kafka.producer;
+package com.cloud.message.kafka.producer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,0 +1,20 @@
+server:
+  port: 8090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+
+ding:
+  talk:
+    api:
+      url: https://oapi.dingtalk.com/robot/send?access_token=
+      token:
+        dev: d6c53c81137595127536cf309039d7897eeceef02cd94b340e3bb74543d65e04
+        research: 905308318f09e5436b4bf4ee66731cd1109edec64abd0eff43e4855f6931f27e
+
+
+#logging:
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
