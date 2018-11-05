@@ -1,7 +1,4 @@
-package com.cloud.message.service;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+package com.cloud.notification.service;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -9,10 +6,11 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-import static java.awt.SystemColor.info;
 
 /**
  * Created by harbor on 11/5/2018.
@@ -36,7 +34,7 @@ public class DingTalkService {
         try{
             HttpClient httpClient = HttpClientBuilder.create().build();
             HttpPost request = new HttpPost(dingTalkApiUrl+token);
-            StringEntity params = new StringEntity("{\"msgtype\": \"text\", \"text\": {\"content\": \"" + info + message + "\"},\"at\":{\"isAtAll\":true} }");
+            StringEntity params = new StringEntity("{\"msgtype\": \"text\", \"text\": {\"content\": \"" + message + "\"},\"at\":{\"isAtAll\":true} }");
 
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
