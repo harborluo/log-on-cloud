@@ -4,10 +4,16 @@ server:
 
 eureka:
   client:
+    register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8061/eureka/
+    health:
+      heck:
+        enable: true
   instance:
     prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
 
 ding:
   talk:
