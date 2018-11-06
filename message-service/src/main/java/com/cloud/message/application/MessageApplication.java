@@ -1,10 +1,11 @@
 package com.cloud.message.application;
 
 
-import com.cloud.message.kafka.producer.Sender;
+//import com.cloud.message.kafka.producer.Sender;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,13 +22,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableSwagger2
-@ComponentScan("com.cloud")
+@ComponentScan(basePackages = {"com.cloud.message"})
+@EnableFeignClients(basePackages = {"com.cloud.message.feign.client"})
 public class MessageApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(MessageApplication.class, args);
-        Sender sender =  context.getBean(Sender.class);
-        sender.send("Spring Kafka Producer and Consumer Example");
+//        ConfigurableApplicationContext context =
+        SpringApplication.run(MessageApplication.class, args);
+//        Sender sender =  context.getBean(Sender.class);
+//        sender.send("Spring Kafka Producer and Consumer Example");
     }
 
 
