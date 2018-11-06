@@ -24,31 +24,15 @@ public class NotificationApplication {
         SpringApplication.run(NotificationApplication.class, args);
     }
 
-//    @Bean
-//    public Docket swaggerApi() {
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.cloud.notification"))
-//                .paths(PathSelectors.any())
-//                .build()
-//                .apiInfo(new ApiInfoBuilder().version("1.0").title("Notification API").description("Documentation Notification API v1.0").build());
-//    }
-
     @Bean
-    public Docket createRestApi() {
+    public Docket swaggerApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo()).select()
-                .apis(RequestHandlerSelectors.basePackage("com.cloud.notification")
-                ).paths(PathSelectors.any()).build();
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.cloud.notification"))
+                .paths(PathSelectors.any())
+                .build()
+                .apiInfo(new ApiInfoBuilder().version("1.0").title("Notification API").description("Documentation Notification API v1.0").build());
     }
 
-
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Tentative cpe crawler manager")
-                .description("Tentative cpe crawler manager")
-                .version("1.0.0")
-                .build();
-    }
 
 }

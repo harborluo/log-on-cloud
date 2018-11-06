@@ -26,3 +26,12 @@ logging:
     org.springframework: ERROR
     org.apache: ERROR
     com.cloud: DEBUG
+
+server:
+  port: 9090
+  context-path: /
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
