@@ -3,7 +3,7 @@ spring:
     bootstrap-servers: 192.168.11.60:9091,192.168.11.60:9092,192.168.11.60:9093
     listener.concurrency: 3
     consumer:
-      group-id: test-consumer-group
+      group-id: cloud-message-consumer-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       auto-offset-reset: earliest
@@ -33,5 +33,13 @@ server:
 
 eureka:
   client:
+    register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8061/eureka/
+    health:
+      check:
+        enable: true
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
