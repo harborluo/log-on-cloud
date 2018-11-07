@@ -2,6 +2,7 @@ package com.cloud.message.application;
 
 
 //import com.cloud.message.kafka.producer.Sender;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -9,6 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.kafka.support.converter.StringJsonMessageConverter;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -44,5 +46,9 @@ public class MessageApplication {
                 .apiInfo(new ApiInfoBuilder().version("1.0").title("Message API").description("Message Notification API v1.0").build());
     }
 
+    @Bean
+    public StringJsonMessageConverter converter() {
+        return new StringJsonMessageConverter();
+    }
 
 }
