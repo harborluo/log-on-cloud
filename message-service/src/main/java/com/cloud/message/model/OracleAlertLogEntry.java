@@ -13,8 +13,6 @@ public class OracleAlertLogEntry extends LogEntry {
 
         String msg = getMessage();
 
-        Pattern.compile("ORA").matcher(msg).find();
-
         if(Pattern.compile("ORA-[0-9]+").matcher(msg).find()){
 
             if( Pattern.compile("ORA-25307").matcher(msg).find()){

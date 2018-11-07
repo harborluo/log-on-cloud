@@ -24,7 +24,7 @@ public class OracleAlertLogReceiver {
     @KafkaListener(topics = {"oracle_alert_log"})
     public void processLog(@Payload OracleAlertLogEntry logEntry){
 
-        logger.info("Receive message '{}'", logEntry.getMessage());
+        logger.info("Receive message:\n{}", logEntry.getMessage());
 
         if(logEntry.isErrorLog()){
             client.sendMessage2Dev(logEntry.getNotificationMessage());
