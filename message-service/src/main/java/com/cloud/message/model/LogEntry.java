@@ -3,6 +3,8 @@ package com.cloud.message.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by harbor on 11/7/2018.
  */
@@ -61,6 +63,10 @@ public abstract class LogEntry {
                 "\nTime: " + getTimestamp() +
                 "\nLog file: "+ getSource()
                 +"\n" + getMessage();
+    }
+
+    public boolean regexpMatch(String source, String pattern){
+       return Pattern.compile(pattern).matcher(source).find();
     }
 
     public abstract boolean isErrorLog();

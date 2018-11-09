@@ -13,9 +13,9 @@ public class OracleAlertLogEntry extends LogEntry {
 
         String msg = getMessage();
 
-        if(Pattern.compile("ORA-[0-9]+").matcher(msg).find()){
+        if( regexpMatch(msg,"ORA-[0-9]+")){
 
-            if( Pattern.compile("ORA-25307").matcher(msg).find()){
+            if( regexpMatch(msg,"ORA-25307")){
                 //ignore ORA-25307: Enqueue rate too high, flow control enabled
                 return false;
             }
