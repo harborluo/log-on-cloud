@@ -27,9 +27,9 @@ public class ContentUILogReceiver  {
             logger.info("Receive message \n{}", logEntry.getNotificationMessage());
             client.sendMessage2Dev(logEntry.getNotificationMessage());
         }
-        else{
-            logger.debug("Receive message \n{}", logEntry.getNotificationMessage());
-        }
+//        else{
+//            logger.debug("Receive message \n{}", logEntry.getNotificationMessage());
+//        }
 
     }
 
