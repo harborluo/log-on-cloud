@@ -1,12 +1,12 @@
 # Version 0.0.1
 FROM java:8
 
-MAINTAINER Ryuu KK "ryuu_kk@163.com"
+MAINTAINER Ryuu KK "85098287@qq.com"
 
 # 环境变量
-ENV WORK_PATH /home/project/dockerdemo
-ENV APP_NAME @project.build.finalName@.@project.packaging@
-ENV APP_VERSION @project.version@
+ENV WORK_PATH /home/project/
+ENV APP_NAME config-service
+ENV APP_VERSION 1.0
 
 EXPOSE 8088
 
@@ -17,10 +17,9 @@ EXPOSE 8088
 VOLUME ["/home/project", "/tmp/data"]
 
 #ADD
-ADD "@project.build.finalName@.@project.packaging@" app.jar
 
 #COPY
-COPY $APP_NAME $WORK_PATH/
+COPY $APP_NAME-$APP_VERSION.jar $WORK_PATH/
 
 #LABEL
 #STOPSIGNAL
@@ -34,4 +33,4 @@ WORKDIR $WORK_PATH
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom"]
 
 # CMD
-CMD ["-jar", "@project.build.finalName@.@project.packaging@"]
+CMD ["-jar", "$APP_NAME-$APP_VERSION.jar"]

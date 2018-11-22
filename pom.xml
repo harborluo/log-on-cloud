@@ -6,7 +6,7 @@
 
     <groupId>com.cloud</groupId>
     <artifactId>log-on-cloud</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <modules>
         <module>message-service</module>
