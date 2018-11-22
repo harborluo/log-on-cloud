@@ -4,7 +4,7 @@ FROM java:8
 MAINTAINER harbor.luo "85098287@qq.com"
 
 # 环境变量
-#ENV WORK_PATH=/home/project/ APP_NAME=config-service-1.0.jar APP_VERSION=1.0
+ENV WORK_PATH=/home/project/ APP_NAME=config-service-1.0.jar APP_VERSION=1.0
 
 EXPOSE 8088
 
