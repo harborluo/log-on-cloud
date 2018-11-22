@@ -4,7 +4,7 @@ FROM java:8
 MAINTAINER harbor.luo "85098287@qq.com"
 
 # 环境变量
-ENV WORK_PATH=/home/project/ APP_NAME=config-service APP_VERSION=1.0
+ENV WORK_PATH=/home/project/ APP_NAME=config-service-1.0.jar APP_VERSION=1.0
 
 EXPOSE 8088
 
@@ -17,18 +17,18 @@ VOLUME ["/home/project", "/tmp/data"]
 #ADD
 
 #COPY
-COPY $APP_NAME-$APP_VERSION.jar $WORK_PATH/
+COPY $APP_NAME $WORK_PATH/
 
 #LABEL
 #STOPSIGNAL
 #ARG
 #ONBUILD
 
-# WORKDIR
+#WORKDIR
 WORKDIR $WORK_PATH
 
 # ENTRYPOINT
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom"]
 
 # CMD
-CMD ["-jar", "$APP_NAME-$APP_VERSION.jar"]
+CMD ["-jar", "$APP_NAME"]
