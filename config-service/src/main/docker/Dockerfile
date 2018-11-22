@@ -1,12 +1,10 @@
 # Version 0.0.1
 FROM java:8
 
-MAINTAINER Ryuu KK "85098287@qq.com"
+MAINTAINER harbor.luo "85098287@qq.com"
 
 # 环境变量
-ENV WORK_PATH /home/project/
-ENV APP_NAME config-service
-ENV APP_VERSION 1.0
+ENV WORK_PATH=/home/project/ APP_NAME=config-service APP_VERSION=1.0
 
 EXPOSE 8088
 
