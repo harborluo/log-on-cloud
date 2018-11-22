@@ -8,7 +8,7 @@ ENV WORK_PATH /home/project/dockerdemo
 ENV APP_NAME @project.build.finalName@.@project.packaging@
 ENV APP_VERSION @project.version@
 
-EXPOSE 8080
+EXPOSE 8088
 
 #USER
 #USER user:group
@@ -17,6 +17,7 @@ EXPOSE 8080
 VOLUME ["/home/project", "/tmp/data"]
 
 #ADD
+ADD "@project.build.finalName@.@project.packaging@" app.jar
 
 #COPY
 COPY $APP_NAME $WORK_PATH/
