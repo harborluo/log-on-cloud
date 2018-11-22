@@ -4,20 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cloud</groupId>
-    <artifactId>log-on-cloud</artifactId>
-    <version>1.0</version>
-
-    <modules>
-        <module>message-service</module>
-        <module>notification-service</module>
-        <module>discovery-service</module>
-        <module>config-service</module>
-    </modules>
-
-    <packaging>pom</packaging>
-    <name>log-on-cloud</name>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -29,7 +15,25 @@
         <spring.boot.version>2.0.0.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.M9</spring.cloud.version>
 
+        <log.cloud.version>1.0</log.cloud.version>
+
     </properties>
+
+    <groupId>com.cloud</groupId>
+    <artifactId>log-on-cloud</artifactId>
+    <version>${log.cloud.version}</version>
+
+    <modules>
+        <module>message-service</module>
+        <module>notification-service</module>
+        <module>discovery-service</module>
+        <module>config-service</module>
+    </modules>
+
+    <packaging>pom</packaging>
+    <name>log-on-cloud</name>
+
+
 
     <dependencyManagement>
 
