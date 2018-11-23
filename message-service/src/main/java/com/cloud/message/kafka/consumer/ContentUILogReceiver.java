@@ -31,6 +31,8 @@ public class ContentUILogReceiver  {
 //            logger.debug("Receive message \n{}", logEntry.getNotificationMessage());
 //        }
 
+        logger.debug("Receive message \n{}", logEntry.getNotificationMessage());
+
     }
 
 }
