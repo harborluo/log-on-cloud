@@ -1,6 +1,6 @@
 [![JDK](http://img.shields.io/badge/JDK-v8.0-yellow.svg)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-[![Build](http://img.shields.io/badge/Build-Maven_2-green.svg)](https://maven.apache.org/)
-[![License](http://img.shields.io/badge/L``icense-Apache_2-red.svg)](http://www.apache.or``g/licenses/LICENSE-2.0)
+[![Build](http://img.shields.io/badge/Build-Maven_3-green.svg)](https://maven.apache.org/)
+[![License](http://img.shields.io/badge/License-Apache_2-red.svg)](http://www.apache.or``g/licenses/LICENSE-2.0)
 
 
 本项目包含以下`feature`的演示
