@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+  kafka:
+    image: spotify/kafka
+  webapp:
+     image: foo/bar # your image
+  tests:
+     image: bar/foo # your image
+     command: dockerize -wait tcp://kafka:9092 -wait web://webapp:8080 YOUR_TEST_COMMAND
