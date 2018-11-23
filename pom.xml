@@ -28,6 +28,9 @@
         <module>notification-service</module>
         <module>discovery-service</module>
         <module>config-service</module>
+
+        <module>web-ui-service</module>
+
     </modules>
 
     <packaging>pom</packaging>

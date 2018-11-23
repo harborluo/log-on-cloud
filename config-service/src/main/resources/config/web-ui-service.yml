@@ -1,0 +1,17 @@
+server:
+  port: 8091
+  context-path: /
+
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://192.168.11.91:8061/eureka/
+    health:
+      heck:
+        enable: true
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+
