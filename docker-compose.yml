@@ -1,0 +1,69 @@
+version: "3"
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
+
+services:
+
+  config-service:
+    image: config-service:latest
+    container_name: config-service-local
+    hostname: config-service-local
+    networks:
+      - front-tier
+      - back-tier
+    ports:
+      - 8088:8088
+    environment:
+      - "TZ=Asia/Shanghai"
+    restart: unless-stopped
+
+  discovery-service:
+    image: discovery-service:latest
+    container_name: discovery-service-local
+    hostname: discovery-service-local
+    ports:
+      - 8061:8061
+    restart: unless-stopped
+#    links:
+#      - elasticsearch:elasticsearch
+    depends_on:
+      - config-service
+    environment:
+      - "TZ=Asia/Shanghai"
+    networks:
+      - front-tier
+      - back-tier
+
+  message-service:
+    image: message-service:latest
+    container_name: message-service-local
+    hostname: message-service-local
+    ports:
+      - 8089:8089
+    restart: unless-stopped
+    depends_on:
+      - config-service
+      - discovery-service
+    environment:
+      - "TZ=Asia/Shanghai"
+    networks:
+      - back-tier
+
+  notification-service:
+    image: notification-service:latest
+    container_name: notification-service-local
+    hostname: notification-service-local
+    ports:
+      - 8090:8090
+    restart: unless-stopped
+    depends_on:
+      - config-service
+      - discovery-service
+    environment:
+      - "TZ=Asia/Shanghai"
+    networks:
+      - front-tier
