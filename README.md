@@ -16,3 +16,13 @@ discovery-service    | 服务发现与注册服务 | 8061      | 8061
 config-service       | 配置服务           | 8088      | 8088              
 message-service      | 信息服务           | 8089      | 8089             
 notification-service | 日志通知服务       | 8090      | 8090              
+
+## 许可证
+
+[Apache 2.0](LICENSE)
+
+## 联系我
+
+![QQ](http://img.shields.io/badge/QQ-85098287-blue.svg)
+![WeChat](http://img.shields.io/badge/WeChat-harbor_luo-blue.svg)
+![Email](http://img.shields.io/badge/Email-85098287@qq.com-blue.svg)
