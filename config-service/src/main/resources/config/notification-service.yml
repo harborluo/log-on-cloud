@@ -6,7 +6,7 @@ eureka:
   client:
     register-with-eureka: true
     serviceUrl:
-      defaultZone: http://localhost:8061/eureka/
+      defaultZone: http://192.168.11.91:8061/eureka/
     health:
       heck:
         enable: true
