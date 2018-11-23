@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OtherLogReceiver {
 
-    private static final Logger logger = LoggerFactory.getLogger(ContentDailyArchiveBackupReceiver.class);
+    private static final Logger logger = LoggerFactory.getLogger(OtherLogReceiver.class);
 
     @KafkaListener(topics = {"tomcat_access_log",
                               "tentative-cpe-manager",
