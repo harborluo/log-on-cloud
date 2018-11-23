@@ -6,7 +6,7 @@ MAINTAINER harbor.luo "85098287@qq.com"
 # 环境变量
 ENV WORK_PATH=/home/project/ APP_NAME=notification-service-1.0.jar APP_VERSION=1.0
 
-EXPOSE 8061
+EXPOSE 8090
 
 #USER
 #USER user:group
