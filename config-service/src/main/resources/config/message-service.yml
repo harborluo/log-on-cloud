@@ -43,3 +43,8 @@ eureka:
     prefer-ip-address: true
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 10
+
+#调用feign请求超时 feign.RetryableException: Read timed out executing POST
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
