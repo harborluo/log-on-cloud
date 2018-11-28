@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "web-ui-service")
 public interface WebUiClient {
 
-    @PostMapping("/receive/{topicName}")
-    String receiveLog(@PathVariable String topicName, @RequestBody String message);
+    @PostMapping(value="/receive/{topicName}")
+    String receiveLog(@PathVariable(value="topicName") String topicName, @RequestBody String message);
 
 }
