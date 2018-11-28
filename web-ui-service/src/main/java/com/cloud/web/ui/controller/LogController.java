@@ -16,7 +16,7 @@ public class LogController {
 
     @PostMapping("/receive/{topicName}")
     @ApiOperation(value = "Receive log from message service", notes ="Receive log from message service")
-    public String receiveLog(@PathVariable String topicName,
+    public String receiveLog(@PathVariable("topicName") String topicName,
                              @RequestBody String message){
 
         logger.debug("Receive message: topic={} message:{}",topicName, message);
