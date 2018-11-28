@@ -21,13 +21,13 @@ public class LogBackEntry {
     @JsonProperty(value="host")
     private String host;
 
-    @JsonProperty(value="@logger_name")
+    @JsonProperty(value="logger_name")
     private String loggerName;
 
-    @JsonProperty(value="@port")
+    @JsonProperty(value="port")
     private int port;
 
-    @JsonProperty(value="@thread_name")
+    @JsonProperty(value="thread_name")
     private String threadName;
 
     @JsonProperty(value="level")
