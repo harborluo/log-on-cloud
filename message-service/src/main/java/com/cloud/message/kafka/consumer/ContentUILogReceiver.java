@@ -1,6 +1,7 @@
 package com.cloud.message.kafka.consumer;
 
 import com.cloud.message.feign.client.NotificationClient;
+import com.cloud.message.feign.client.WebUiClient;
 import com.cloud.message.model.CDBLogEntry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,9 @@ public class ContentUILogReceiver  {
     @Autowired
     NotificationClient client;
 
+    @Autowired
+    WebUiClient webUiClient;
+
     private static final Logger logger = LoggerFactory.getLogger(ContentUILogReceiver.class);
 
     @KafkaListener(topics = {"cdb_ui_log"})
@@ -27,11 +31,8 @@ public class ContentUILogReceiver  {
             logger.info("Receive message \n{}", logEntry.getNotificationMessage());
             client.sendMessage2Dev(logEntry.getNotificationMessage());
         }
-//        else{
-//            logger.debug("Receive message \n{}", logEntry.getNotificationMessage());
-//        }
 
-//        logger.debug("Receive message \n{}", logEntry.getNotificationMessage());
+        webUiClient.receiveLog("cdb_ui_log", logEntry.getMessage());
 
     }
 
