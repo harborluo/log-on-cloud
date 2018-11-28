@@ -19,7 +19,7 @@ public class LogController {
     public String receiveLog(@PathVariable("topicName") String topicName,
                              @RequestBody String message){
 
-        logger.debug("Receive message: topic={} message:{}",topicName, message);
+        logger.info("Receive message: topic={} message:{}",topicName, message);
 
         return "Done";
     }

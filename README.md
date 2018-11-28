@@ -15,7 +15,8 @@
 discovery-service    | 服务发现与注册服务 | 8061      | 8061              
 config-service       | 配置服务           | 8088      | 8088              
 message-service      | 信息服务           | 8089      | 8089             
-notification-service | 日志通知服务       | 8090      | 8090              
+notification-service | 日志通知服务       | 8090      | 8090        
+web-ui-service       | web ui 服务        | 8091      | 8091
 
 ## 许可证
 
