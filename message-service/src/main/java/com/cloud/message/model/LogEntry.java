@@ -23,6 +23,7 @@ public abstract class LogEntry {
     @JsonProperty(value="@timestamp")
     private String timestamp;
 
+
     @JsonProperty(value="host")
     private Host host;
 
@@ -73,6 +74,7 @@ public abstract class LogEntry {
 
 }
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Host {
 
     private String name;
