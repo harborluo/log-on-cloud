@@ -96,7 +96,7 @@ services:
       - front-tier
       - back-tier
 
-message-service:
+  message-service:
     image: message-service:latest
     container_name: message-service-local
     hostname: message-service-local
