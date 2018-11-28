@@ -70,6 +70,7 @@ services:
     environment:
       - "TZ=Asia/Shanghai"
     networks:
+      - front-tier
       - back-tier
 
   notification-service:
@@ -93,6 +94,7 @@ services:
       - "TZ=Asia/Shanghai"
     networks:
       - front-tier
+      - front-tier
 
   web-ui-service:
     image: web-ui-service:latest
@@ -114,4 +116,5 @@ services:
     environment:
       - "TZ=Asia/Shanghai"
     networks:
+      - front-tier
       - front-tier
