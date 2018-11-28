@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LogBackEntry {
 
-    @JsonProperty(value="source")
-    private String source;
+//    @JsonProperty(value="source")
+//    private String source;
 
     @JsonProperty(value="message")
     private String message;
@@ -33,13 +33,13 @@ public class LogBackEntry {
     @JsonProperty(value="level")
     private String level;
 
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
+//    public String getSource() {
+//        return source;
+//    }
+//
+//    public void setSource(String source) {
+//        this.source = source;
+//    }
 
     public String getMessage() {
         return message;
@@ -100,7 +100,7 @@ public class LogBackEntry {
     public String getNotificationMessage() {
         return "Host: " + getHost()+
                 "\nTime: " + getTimestamp() +
-                "\nLog file: "+ getSource()
+                "\nport: "+ getPort()
                 +"\n" + getMessage();
     }
 }
