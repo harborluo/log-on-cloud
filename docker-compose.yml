@@ -94,7 +94,7 @@ services:
       - "TZ=Asia/Shanghai"
     networks:
       - front-tier
-      - front-tier
+      - back-tier
 
   web-ui-service:
     image: web-ui-service:latest
@@ -117,4 +117,4 @@ services:
       - "TZ=Asia/Shanghai"
     networks:
       - front-tier
-      - front-tier
+      - back-tier
