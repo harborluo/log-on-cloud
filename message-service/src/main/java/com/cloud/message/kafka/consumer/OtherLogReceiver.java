@@ -17,8 +17,6 @@ public class OtherLogReceiver {
     private static final Logger logger = LoggerFactory.getLogger(OtherLogReceiver.class);
 
     @KafkaListener(topics = {"tomcat_access_log",
-                              "tentative-cpe-manager",
-                              "tentative-cpe-worker",
                               "technopedia_publish_cron_log",
                               "normalize_auto_map_cron_log",
                               "load_tentative_cron_log",
