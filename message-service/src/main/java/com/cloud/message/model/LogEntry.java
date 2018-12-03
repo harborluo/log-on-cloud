@@ -66,10 +66,6 @@ public abstract class LogEntry {
                 +"\n" + getMessage();
     }
 
-    public boolean regexpMatch(String source, String pattern){
-       return Pattern.compile(pattern).matcher(source).find();
-    }
-
     public abstract boolean isErrorLog();
 
 }

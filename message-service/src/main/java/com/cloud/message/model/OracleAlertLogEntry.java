@@ -1,5 +1,7 @@
 package com.cloud.message.model;
 
+import com.cloud.message.util.Utils;
+
 import java.util.regex.Pattern;
 
 /**
@@ -13,9 +15,9 @@ public class OracleAlertLogEntry extends LogEntry {
 
         String msg = getMessage();
 
-        if( regexpMatch(msg,"ORA-[0-9]+")){
+        if( Utils.regexpMatch(msg,"ORA-[0-9]+")){
 
-            if( regexpMatch(msg,"ORA-25307")){
+            if( Utils.regexpMatch(msg,"ORA-25307")){
                 //ignore ORA-25307: Enqueue rate too high, flow control enabled
                 return false;
             }

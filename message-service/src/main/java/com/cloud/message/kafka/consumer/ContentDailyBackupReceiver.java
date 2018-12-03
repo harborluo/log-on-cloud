@@ -4,6 +4,7 @@ import com.cloud.message.feign.client.NotificationClient;
 import com.cloud.message.model.CDBLogEntry;
 import com.cloud.message.model.CronLogEntry;
 import com.cloud.message.model.OracleAlertLogEntry;
+import com.cloud.message.util.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class ContentDailyBackupReceiver {
         if(logEntry.isErrorLog()){
             client.sendMessage2Dev(logEntry.getNotificationMessage());
         }
+
+        if(Utils.regexpMatch(logEntry.getMessage(),"Upload (commpleted|complete)")){
+            client.sendMessage2Dev(logEntry.getHostname()+"\n"+logEntry.getTimestamp()+"\n"+"Daily content DB backup successfully.");
+        }
+
     }
 
 }
