@@ -32,7 +32,7 @@ public class ContentUILogReceiver  {
             client.sendMessage2Dev(logEntry.getNotificationMessage());
         }
 
-//        webUiClient.receiveLog("cdb_ui_log", logEntry.getMessage());
+        webUiClient.receiveLog("cdb_ui_log", logEntry.getMessage());
 
     }
 
