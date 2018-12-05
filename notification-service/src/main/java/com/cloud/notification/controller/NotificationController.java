@@ -35,7 +35,7 @@ public class NotificationController {
     }
 
     @PostMapping(value = "/send/message/researcher")
-    @ApiOperation(value = "Send message to dev group", notes ="Send message to researcher group via DingTalk")
+    @ApiOperation(value = "Send message to researcher group", notes ="Send message to researcher group via DingTalk")
     public @ResponseBody ResponseEntity<String> sendMessage2Researcher(@RequestBody String message){
         String body = service.sendMessage2Researcher(message);
         logger.info("Send message to researcher group: \n {}", message);
