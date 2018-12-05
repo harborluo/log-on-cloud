@@ -26,7 +26,7 @@ public class WorkflowImporterReceiver {
     public void processLog(@Payload NormalizeLogEntry logEntry){
         if(logEntry.isErrorLog()){
             logger.info("Send error message to researcher \n{}",logEntry.getNotificationMessage());
-            client.sendMessage2Dev(logEntry.getNotificationMessage());
+            client.sendMessage2Researcher(logEntry.getNotificationMessage());
         }
     }
 }
