@@ -1,6 +1,7 @@
 package com.cloud.message.feign.client;
 
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 
@@ -18,5 +19,9 @@ public interface NotificationClient {
 
     @PostMapping(value = "/send/message/dev")
     @ResponseBody ResponseEntity<String> sendMessage2Dev(@RequestBody String message);
+
+
+    @PostMapping(value = "/send/message/researcher")
+    @ResponseBody ResponseEntity<String> sendMessage2Researcher(@RequestBody String message);
 
 }
