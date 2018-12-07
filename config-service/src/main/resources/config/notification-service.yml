@@ -21,7 +21,7 @@ ding:
       url: https://oapi.dingtalk.com/robot/send?access_token=
       token:
         dev: d6c53c81137595127536cf309039d7897eeceef02cd94b340e3bb74543d65e04
-        research: 905308318f09e5436b4bf4ee66731cd1109edec64abd0eff43e4855f6931f27e
+        research: e158f2bb73f0e6cb4e9ad07953137a50f20c85f7a9c2a6946ea681ac7dce7710
 
 
 #logging:
