@@ -39,7 +39,8 @@ public class DingTalkService {
         try{
             HttpClient httpClient = HttpClientBuilder.create().build();
             HttpPost request = new HttpPost(dingTalkApiUrl+token);
-            StringEntity params = new StringEntity("{\"msgtype\": \"text\", \"text\": {\"content\": \"" + message + "\"},\"at\":{\"isAtAll\":true} }");
+            //escape double quote for message
+            StringEntity params = new StringEntity("{\"msgtype\": \"text\", \"text\": {\"content\": \"" + message.replaceAll("\"","\\\"") + "\"},\"at\":{\"isAtAll\":true} }");
 
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
