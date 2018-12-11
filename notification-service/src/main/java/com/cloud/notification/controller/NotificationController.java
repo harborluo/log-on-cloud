@@ -31,7 +31,7 @@ public class NotificationController {
 
         String body = service.sendMessage2Dev(message);
         ResponseEntity<String>  response = new ResponseEntity<>(body, HttpStatus.OK);
-        logger.info("Send message to dev group: \n {} \nResponse body is", message, body);
+        logger.info("Send message to dev group: \n {} \nResponse body is {}", message, body);
         return response;
     }
 
@@ -40,7 +40,7 @@ public class NotificationController {
     public @ResponseBody ResponseEntity<String> sendMessage2Researcher(@RequestBody String message){
         String body = service.sendMessage2Researcher(message);
         ResponseEntity<String>  response = new ResponseEntity<>(body, HttpStatus.OK);
-        logger.info("Send message to researcher group: \n {} \nResponse body is", message, body);
+        logger.info("Send message to researcher group: \n {} \nResponse body is {}", message, body);
         return response;
     }
 
