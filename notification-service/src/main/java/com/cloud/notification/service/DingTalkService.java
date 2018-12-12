@@ -39,8 +39,11 @@ public class DingTalkService {
         try{
             HttpClient httpClient = HttpClientBuilder.create().build();
             HttpPost request = new HttpPost(dingTalkApiUrl+token);
-            //escape double quote for message
-            StringEntity params = new StringEntity("{\"msgtype\": \"text\", \"text\": {\"content\": \"" + message.replaceAll("\"","\\\"") + "\"},\"at\":{\"isAtAll\":true} }");
+
+            //escape double quote and backslash for message
+            message = message.replaceAll("\\\\", "\\\\\\\\").replaceAll("\"", "\\\\\"");
+
+            StringEntity params = new StringEntity("{\"msgtype\": \"text\", \"text\": {\"content\": \"" + message + "\"},\"at\":{\"isAtAll\":true} }");
 
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
