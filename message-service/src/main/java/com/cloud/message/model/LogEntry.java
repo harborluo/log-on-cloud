@@ -3,6 +3,11 @@ package com.cloud.message.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 import java.util.regex.Pattern;
 
 /**
@@ -44,7 +49,22 @@ public abstract class LogEntry {
     }
 
     public String getTimestamp() {
-        return timestamp;
+
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date date = null;
+        //timestamp value sample is "2018-12-19T00:45:00.448Z"
+        try {
+            date = formatter.parse(this.timestamp);
+
+        }catch (ParseException e){
+
+        }
+
+        // Set the formatter to use a different timezone
+        formatter.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+
+        return formatter.format(date);
     }
 
     public void setTimestamp(String timestamp) {
@@ -60,6 +80,7 @@ public abstract class LogEntry {
     }
 
     public String getNotificationMessage(){
+
         return "Host: " + getHostname()+
                 "\nTime: " + getTimestamp() +
                 "\nLog file: "+ getSource()
