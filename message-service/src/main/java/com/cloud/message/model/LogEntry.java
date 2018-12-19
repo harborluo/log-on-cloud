@@ -1,5 +1,6 @@
 package com.cloud.message.model;
 
+import com.cloud.message.util.Utils;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -50,21 +51,8 @@ public abstract class LogEntry {
 
     public String getTimestamp() {
 
-        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
-        Date date = null;
-        //timestamp value sample is "2018-12-19T00:45:00.448Z"
-        try {
-            date = formatter.parse(this.timestamp);
-
-        }catch (ParseException e){
-
-        }
-
-        // Set the formatter to use a different timezone
-        formatter.setTimeZone(TimeZone.getTimeZone("GMT+8"));
-
-        return formatter.format(date);
+        String localTimestamp = Utils.convertTimestamp(this.timestamp, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC","GMT+8");
+        return localTimestamp;
     }
 
     public void setTimestamp(String timestamp) {
