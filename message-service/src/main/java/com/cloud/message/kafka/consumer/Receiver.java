@@ -22,7 +22,7 @@ public class Receiver {
     @KafkaListener(topics = {"${app.topic.foo}"})
     public void processLog(@Payload String message){
         logger.info("Receive message '{}'", message);
-        client.sendMessage2Dev(message);
+//        client.sendMessage2Dev(message);
     }
 
 }
