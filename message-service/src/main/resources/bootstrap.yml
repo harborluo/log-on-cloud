@@ -3,4 +3,4 @@ spring:
     name: message-service
   cloud:
     config:
-      uri: http://192.168.11.91:8088
+      uri: http://192.168.146.128:8088
