@@ -122,3 +122,30 @@ services:
     networks:
       - front-tier
       - back-tier
+
+  message-service:
+    image: message-service:latest
+    container_name: message-service-clone
+    hostname: message-service-clone
+    ports:
+      - 8092:8089
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8089/actuator/info"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      config-service:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      notification-service:
+        condition: service_healthy
+      web-ui-service:
+        condition: service_healthy
+    environment:
+      - "TZ=Asia/Shanghai"
+    networks:
+      - front-tier
+      - back-tier
