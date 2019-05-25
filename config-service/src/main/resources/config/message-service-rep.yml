@@ -1,0 +1,50 @@
+server:
+  port: 8089
+  context-path: /
+
+spring:
+  kafka:
+    bootstrap-servers: 192.168.146.129:9091,192.168.146.129:9092,192.168.146.129:9093
+    listener.concurrency: 3
+    consumer:
+      group-id: cloud-message-consumer-group-rep
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      batch-size: 16384
+      buffer-memory: 33554432
+
+app:
+  topic:
+    foo: foo.t
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    org.apache: ERROR
+    com.cloud: DEBUG
+
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://192.168.146.128:8061/eureka/
+    health:
+      check:
+        enable: true
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+
+#调用feign请求超时 feign.RetryableException: Read timed out executing POST
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
