@@ -46,9 +46,9 @@ public class MessageApplication {
                 .apiInfo(new ApiInfoBuilder().version("1.0").title("Message API").description("Message Notification API v1.0").build());
     }
 
-    @Bean
-    public StringJsonMessageConverter converter() {
-        return new StringJsonMessageConverter();
-    }
+//    @Bean
+//    public StringJsonMessageConverter converter() {
+//        return new StringJsonMessageConverter();
+//    }
 
 }
